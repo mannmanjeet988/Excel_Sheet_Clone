@@ -25,13 +25,19 @@
     <button id="copy-btn">Copy</button>
     <button id="paste-btn">Paste</button>
 
-   <select class="font-size">
+   <select id="font-size">
     <option value="14px">14</option>
     <option value="16px">16</option>
     <option value="18px">18</option>
+    <option value="20px">20</option>
+    <option value="22px">22</option>
+    <option value="24px">24</option>
+    <option value="26px">26</option>
+    <option value="28px">28</option>
+    <option value="30px">30</option>
    </select>
 
-   <select class="font-family">
+   <select id="font-family">
     <option value="serif">Serif</option>
     <option value="sans-serif">Sans-serif</option>
     <option value="monospace">Monospace</option>
@@ -41,6 +47,12 @@
    <hr>
    <button onclick="downloadJson()">Download</button>
    <input type="file" id="jsonFile" accept=".json">
+   <hr>
+   <button id="add-sheet-button">Add sheet</button>
+   <h2 id="sheet-no">sheet No - 1</h2>
+   <div id="button-container">
+     <button id="sheet-1" onclick="viewSheet(event)">Sheet 1</button>
+   </div>
    
     <table class="my-table">
         <thead>
