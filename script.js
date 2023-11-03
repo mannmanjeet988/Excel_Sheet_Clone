@@ -12,6 +12,12 @@ const cutBtn = document.getElementById("cut-btn");
 const copyBtn = document.getElementById("copy-btn");
 const pasteBtn = document.getElementById("paste-btn");
 
+const borderbtmbtn = document.getElementById("border-btm-btn");
+const borderleftbtn = document.getElementById("border-left-btn");
+const borderrightbtn = document.getElementById("border-right-btn");
+const bordertopbtn = document.getElementById("border-top-btn");
+const borderouterbtn = document.getElementById("border-outer-btn");
+
 const fontSizeDropDown = document.getElementById("font-size");
 const fontFamilyDropDown = document.getElementById("font-family");
 
@@ -178,6 +184,56 @@ rightAlignBtn.addEventListener("click", () => {
   updateMatrix(currCell);
 });
 
+borderbtmbtn.addEventListener("click", () => {
+  if (currCell.style.borderBottom == "2px solid black") {
+    currCell.style.borderBottom = "1px solid lightgray";
+  }
+  else {
+      currCell.style.borderBottom = "2px solid black";
+  }
+  updateMatrix(currCell);
+});
+
+borderleftbtn.addEventListener("click", () => {
+  if (currCell.style.borderLeft == "2px solid black") {
+    currCell.style.borderLeft = "1px solid lightgray";
+  }
+  else {
+      currCell.style.borderLeft = "2px solid black";
+  }
+  updateMatrix(currCell);
+});
+
+borderrightbtn.addEventListener("click", () => {
+  if (currCell.style.borderright == "2px solid black") {
+    currCell.style.borderRight = "1px solid lightgray";
+  }
+  else {
+      currCell.style.borderRight = "2px solid black";
+  }
+  updateMatrix(currCell);
+});
+
+bordertopbtn.addEventListener("click", () => {
+  if (currCell.style.borderTop == "2px solid black") {
+    currCell.style.borderTop = "1px solid lightgray";
+  }
+  else {
+      currCell.style.borderTop = "2px solid black";
+  }
+  updateMatrix(currCell);
+});
+
+borderouterbtn.addEventListener("click", () => {
+  if (currCell.style.border == "2px solid black") {
+    currCell.style.border = "1px solid lightgray";
+  }
+  else {
+      currCell.style.border = "2px solid black";
+  }
+  updateMatrix(currCell);
+});
+
 fontSizeDropDown.addEventListener("change", () => {
   currCell.style.fontSize = fontSizeDropDown.value;
   // what ever option tag is chosen by the end user is
@@ -275,6 +331,7 @@ addSheetButton.addEventListener("click", () => {
   numSheets++;
   currSheetNum = numSheets;
   btn.innerText = `Sheet ${numSheets}`;
+  btn.setAttribute("class", "sheet")
   btn.setAttribute("id", `sheet-${currSheetNum}`);
   btn.setAttribute("onclick", "viewSheet(event)");
   buttonContainer.append(btn);

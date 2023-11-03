@@ -4,56 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excel Sheet</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1 id="current-cell">No cell</h1>
-    <button id="bold-btn">B</button>
-    <button id="italics-btn">I</button>
-    <button id="underline-btn">U</button>
 
-    <label for="text-color">Text</label>
-    <input type="color" id="text-color">
-    <label for="bg-color">Bg-Color</label>
-    <input type="color" id="bg-color">
+    <div class="navbar">
+        <span>File</span>
+        <span id="home">Home</span>
+        <span>Insert</span>
+        <span>Layout</span>
+        <span>Help</span>
+    </div>
 
-    <button id="left-align-btn">Left</button>
-    <button id="center-align--btn">Centre</button>
-    <button id="right-align--btn">Right</button>
+    <div id="top-container">
+    <span id="current-cell">No cell</span>   
+    <button class="material-icons" id="bold-btn">format_bold</button>
+    <button class="material-icons" id="italics-btn">format_italic</button>
+    <button class="material-icons" id="underline-btn">format_underline</button>
 
-    <button id="cut-btn">Cut</button>
-    <button id="copy-btn">Copy</button>
-    <button id="paste-btn">Paste</button>
-
-   <select id="font-size">
-    <option value="14px">14</option>
-    <option value="16px">16</option>
-    <option value="18px">18</option>
-    <option value="20px">20</option>
-    <option value="22px">22</option>
-    <option value="24px">24</option>
-    <option value="26px">26</option>
-    <option value="28px">28</option>
-    <option value="30px">30</option>
-   </select>
-
-   <select id="font-family">
-    <option value="serif">Serif</option>
-    <option value="sans-serif">Sans-serif</option>
-    <option value="monospace">Monospace</option>
-    <option value="cursive">Cursive</option>
-    <option value="fantasy">Fantasy</option>
-   </select>
-   <hr>
-   <button onclick="downloadJson()">Download</button>
-   <input type="file" id="jsonFile" accept=".json">
-   <hr>
-   <button id="add-sheet-button">Add sheet</button>
-   <h2 id="sheet-no">sheet No - 1</h2>
-   <div id="button-container">
-     <button id="sheet-1" onclick="viewSheet(event)">Sheet 1</button>
-   </div>
    
+    <button class="material-icons" id="left-align-btn">format_align_left</button>
+    <button class="material-icons" id="center-align--btn">format_align_center</button>
+    <button class="material-icons" id="right-align--btn">format_align_right</button>
+
+    <select id="font-size">
+        <option value="10px">10</option>
+        <option value="12px">12</option>
+        <option value="14px">14</option>
+        <option value="16px">16</option>
+        <option value="18px">18</option>
+        <option value="20px">20</option>
+        <option value="22px">22</option>
+        <option value="24px">24</option>
+        <option value="26px">26</option>
+        <option value="28px">28</option>
+        <option value="30px">30</option>
+       </select>
+    
+       <select id="font-family" >
+        <option value="serif">Serif</option>
+        <option value="monospace">Monospace</option>
+        <option value="sans-serif">Sans-serif</option>
+        <option value="cursive">Cursive</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="Arial, sans-serif">Arial</option>
+          <option value="Georgia, serif">Georgia</option>
+          <option value="Helvetica, sans-serif">Helvetica</option>
+          <option value="Lucida Sans Unicode, sans-serif">Lucida Sans Unicode</option>
+          <option value="Tahoma, sans-serif">Tahoma</option>
+          <option value="Times New Roman, serif">Times New Roman</option>
+          <option value="Verdana, sans-serif">Verdana</option>
+       </select>
+
+    <label class="material-icons" for="text-color">format_color_text</label>
+    <input type="color"  id="text-color" name="text-color">
+    <label class="material-icons" for="bg-color">format_color_fill</label>
+    <input type="color" id="bg-color" name="bg-color">
+
+
+    <button class="material-icons"  id="cut-btn">content_cut</button>
+    <button class="material-icons" id="copy-btn">content_copy</button>
+    <button class="material-icons" id="paste-btn">content_paste</button>
+
+    <button class="material-icons" onclick="downloadJson()">download</button>
+   <label class="material-icons" for="jsonFile">upload </label>
+   <input type="file"   id="jsonFile" accept=".json" style="display: none;">
+
+    <button class="material-icons" id="border-btm-btn">border_bottom</button>
+        <button class="material-icons" id="border-top-btn">border_top</button>
+        <button class="material-icons" id="border-left-btn">border_left</button>
+        <button class="material-icons" id="border-right-btn">border_right</button>
+        <button class="material-icons" id="border-outer-btn">border_outer</button>
+    </div>
+   
+   <div class="table-container">
     <table class="my-table">
         <thead>
             <tr id="table-heading-row">
@@ -64,6 +89,13 @@
         <br>
         <tbody id="table-body"></tbody>
     </table>
+</div>
+    <div id="button-container">
+        <button class="material-icons" id="add-sheet-button">add</button>
+        <h2 id="sheet-no" style="display: none;">sheet No - 1</h2>
+        <button id="sheet-1" class="sheet" onclick="viewSheet(event)">Sheet 1</button>
+      </div>
+    
     <script src="./script.js"></script>
 </body>
 </html>
