@@ -132,7 +132,7 @@ label:hover {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 15px;
   overflow-x: auto;
 }
 
